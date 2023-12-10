@@ -1,7 +1,7 @@
 import { axiosInstance } from "./axiosInstance";
 
 export const BASE_API =
-  process.env.REACT_APP_BASE_API_URL || "http://localhost:6000";
+  process.env.REACT_APP_BASE_API_URL || "http://localhost:4000";
 
 // issue a book
 export const IssueBook = async (payload) => {

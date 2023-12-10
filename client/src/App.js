@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ExternalBookResults from "./pages/ExternalBookResults";
+import ExternalBookDetails from "./pages/ExternalBookDetails";
 
 import "./stylesheets/alignments.css";
 import "./stylesheets/theme.css";
@@ -49,6 +51,8 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/external-results" element={<ExternalBookResults />} />
+          <Route path="/book-detail/:bookId" element={<ExternalBookDetails />} />
         </Routes>
       </BrowserRouter>
     </div>

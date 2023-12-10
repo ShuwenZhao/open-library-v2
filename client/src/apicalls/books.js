@@ -44,7 +44,7 @@ export const DeleteBook = async (id) => {
   } catch (error) {
     throw error;
   }
-}
+};
 
 // get book by id
 export const GetBookById = async (id) => {
@@ -54,6 +54,20 @@ export const GetBookById = async (id) => {
   } catch (error) {
     throw error;
   }
-}
+};
+
+// Search external books
+export const SearchExternalBooks = async (title) => {
+  try {
+    const response = await axiosInstance.get(`${BASE_API}/api/external-books/search`, {
+      params: { query: title }
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+
 
 

@@ -1,9 +1,12 @@
 import { axiosInstance } from "./axiosInstance";
 
+export const BASE_API =
+  process.env.REACT_APP_BASE_API_URL || "http://localhost:6000";
+
 // register a user
 export const RegisterUser = async (payload) => {
   try {
-    const response = await axiosInstance.post("/api/users/register", payload);
+    const response = await axiosInstance.post(`${BASE_API}/api/users/register`, payload);
     return response.data;
   } catch (error) {
     throw error;
@@ -13,7 +16,7 @@ export const RegisterUser = async (payload) => {
 // login a user
 export const LoginUser = async (payload) => {
   try {
-    const response = await axiosInstance.post("/api/users/login", payload);
+    const response = await axiosInstance.post(`${BASE_API}/api/users/login`, payload);
     return response.data;
   } catch (error) {
     throw error;
@@ -24,7 +27,7 @@ export const LoginUser = async (payload) => {
 
 export const GetLoggedInUserDetails = async () => {
   try {
-    const response = await axiosInstance.get("/api/users/get-logged-in-user");
+    const response = await axiosInstance.get(`${BASE_API}/api/users/get-logged-in-user`);
     return response.data;
   } catch (error) {
     throw error;
@@ -34,7 +37,7 @@ export const GetLoggedInUserDetails = async () => {
 // get all users
 export const GetAllUsers = async (role) => {
   try {
-    const response = await axiosInstance.get(`/api/users/get-all-users/${role}`);
+    const response = await axiosInstance.get(`${BASE_API}/api/users/get-all-users/${role}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -46,7 +49,7 @@ export const GetAllUsers = async (role) => {
 
 export const GetUserById = async (id) => {
   try {
-    const response = await axiosInstance.get(`/api/users/get-user-by-id/${id}`);
+    const response = await axiosInstance.get(`${BASE_API}/api/users/get-user-by-id/${id}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -57,7 +60,7 @@ export const GetUserById = async (id) => {
 export const UpdateUser = async (payload) => {
   try {
     const response = await axiosInstance.put(
-      `/api/users/update-user/${payload._id}`,
+      `${BASE_API}/api/users/update-user/${payload._id}`,
       payload
     );
     return response.data;

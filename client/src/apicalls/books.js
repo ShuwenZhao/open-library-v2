@@ -1,9 +1,12 @@
 import { axiosInstance } from "./axiosInstance";
 
+export const BASE_API =
+  process.env.REACT_APP_BASE_API_URL || "http://localhost:6000";
+
 // add book
 export const AddBook = async (payload) => {
   try {
-    const response = await axiosInstance.post("/api/books/add-book", payload);
+    const response = await axiosInstance.post(`${BASE_API}/api/books/add-book`, payload);
     return response.data;
   } catch (error) {
     throw error;
@@ -13,7 +16,7 @@ export const AddBook = async (payload) => {
 // get all books
 export const GetAllBooks = async () => {
   try {
-    const response = await axiosInstance.get("/api/books/get-all-books");
+    const response = await axiosInstance.get(`${BASE_API}/api/books/get-all-books`);
     return response.data;
   } catch (error) {
     throw error;
@@ -24,7 +27,7 @@ export const GetAllBooks = async () => {
 export const UpdateBook = async (payload) => {
   try {
     const response = await axiosInstance.put(
-      `/api/books/update-book/${payload._id}`,
+      `${BASE_API}/api/books/update-book/${payload._id}`,
       payload
     );
     return response.data;
@@ -36,7 +39,7 @@ export const UpdateBook = async (payload) => {
 // delete book
 export const DeleteBook = async (id) => {
   try {
-    const response = await axiosInstance.delete(`/api/books/delete-book/${id}`);
+    const response = await axiosInstance.delete(`${BASE_API}/api/books/delete-book/${id}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -46,7 +49,7 @@ export const DeleteBook = async (id) => {
 // get book by id
 export const GetBookById = async (id) => {
   try {
-    const response = await axiosInstance.get(`/api/books/get-book-by-id/${id}`);
+    const response = await axiosInstance.get(`${BASE_API}/api/books/get-book-by-id/${id}`);
     return response.data;
   } catch (error) {
     throw error;

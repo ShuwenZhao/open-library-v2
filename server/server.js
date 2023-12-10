@@ -1,15 +1,17 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
 app.use(express.json());
 require("dotenv").config();
 const dbConfig = require("./config/dbConfig");
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 4000;
 
 const usersRoute = require("./routes/usersRoute");
 const booksRoute = require("./routes/booksRoute");
 const issuesRoute = require("./routes/issuesRoute");
 const reportsRoute = require("./routes/reportsRoute");
 
+app.use(cors());
 app.use("/api/users", usersRoute);
 app.use("/api/books", booksRoute);
 app.use("/api/issues", issuesRoute);

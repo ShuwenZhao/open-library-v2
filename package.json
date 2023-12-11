@@ -1,5 +1,5 @@
 {
-  "name": "sheylibrary",
+  "name": "openlibrary",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sathyaprakash195/sheylibrary-udemy.git"
+    "url": "git+https://github.com/ShuwenZhao/open-library-v2.git"
   },
   "bugs": {
-    "url": "https://github.com/sathyaprakash195/sheylibrary-udemy/issues"
+    "url": "https://github.com/ShuwenZhao/open-library-v2/issues"
   },
-  "homepage": "https://github.com/sathyaprakash195/sheylibrary-udemy#readme",
+  "homepage": "https://github.com/ShuwenZhao/open-library-v2#readme",
   "description": "",
   "config": {
     "mongodbMemoryServer": {

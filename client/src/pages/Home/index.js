@@ -98,8 +98,10 @@ function Home() {
         className="search-bar"
         style={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
           alignItems: "center",
+          justifyContent: "center",
+          paddingBottom: "30px",
         }}
       >
         <input
@@ -108,10 +110,10 @@ function Home() {
           className="search-input"
           id="external-search"
           onChange={(e) => setExternalQuery(e.target.value)}
-          style={{ marginBottom: "30px", width: "50%" }}
+          style={{ width: "40%", marginRight: "3%" }}
         ></input>
-        <Button style={{ marginLeft: "10px" }}
-          className="flex justify-end"
+        <Button style={{ marginBottom: "30px", }}
+          // className="flex justify-end"
           title="Search"
           onClick={handleExternalSearch}
         ></Button>
